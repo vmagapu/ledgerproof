@@ -1,0 +1,27 @@
+[project]
+name = "ledgerproof"
+version = "0.1.0"
+description = "An event-sourced double-entry ledger with exactly-once processing semantics, a tamper-evident hash chain, and crash-recovery proofs - small enough to read, rigorous enough to argue with."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Vish Magapu", email = "vmagapu@gmail.com" }]
+keywords = ["event-sourcing", "exactly-once", "ledger", "double-entry", "kafka", "audit"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/vmagapu/ledgerproof"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ledgerproof"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
